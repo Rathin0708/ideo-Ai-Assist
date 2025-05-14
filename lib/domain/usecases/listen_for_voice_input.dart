@@ -5,7 +5,7 @@ class ListenForVoiceInput {
 
   ListenForVoiceInput(this.repository);
 
-  Future<String> execute() async {
-    return await repository.listenForVoiceInput();
+  Future<String> execute({String? languageCode}) async {
+    return await repository.listenForVoiceInput(languageCode: languageCode);
   }
 }

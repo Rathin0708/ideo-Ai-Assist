@@ -4,5 +4,5 @@
 
 class ApiKeys {
   // Get your API key from https://ai.google.dev/
-  static const String geminiApiKey = 'AIzaSyAC28RGOYHRkKSuNOeU3jlwD3GaGOU3Mno';
+  static const String geminiApiKey = 'AIzaSyApgSrcA2jOQzjk2m84KzXb5qYVWyn2D5c';
 }

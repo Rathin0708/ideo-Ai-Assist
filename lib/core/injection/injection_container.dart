@@ -60,4 +60,7 @@ Future<void> initDependencies() async {
   serviceLocator.registerSingleton(
     SpeakResponse(serviceLocator.get<VoiceRepository>()),
   );
+
+  // Initialize voice repository
+  await serviceLocator.get<VoiceRepository>().initialize();
 }

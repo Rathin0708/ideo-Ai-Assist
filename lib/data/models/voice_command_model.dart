@@ -9,9 +9,13 @@ class VoiceCommandModel extends VoiceCommand {
 
   factory VoiceCommandModel.fromJson(Map<String, dynamic> json) {
     return VoiceCommandModel(
-      action: json['action'] ?? 'unknown action',
-      location: json['location'],
-      date: json['date'],
+      action: json['action'] ?? 'unknown',
+      location: (json['location'] is String && json['location'].isNotEmpty)
+          ? json['location']
+          : null,
+      date: (json['date'] is String && json['date'].isNotEmpty)
+          ? json['date']
+          : null,
     );
   }
 
@@ -20,6 +24,15 @@ class VoiceCommandModel extends VoiceCommand {
       'action': action,
       'location': location,
       'date': date,
+    };
+  }
+
+  Map<String, dynamic> toApiJson() {
+    return {
+      'command_type': action,
+      'location': location ?? '',
+      'date': date ?? '',
+      'timestamp': DateTime.now().toIso8601String(),
     };
   }
 }
