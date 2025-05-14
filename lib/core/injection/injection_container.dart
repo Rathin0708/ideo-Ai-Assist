@@ -7,6 +7,7 @@ import '../../domain/repositories/voice_repository.dart';
 import '../../domain/usecases/listen_for_voice_input.dart';
 import '../../domain/usecases/process_voice_command.dart';
 import '../../domain/usecases/speak_response.dart';
+import '../services/history_service.dart';
 
 // Simple service locator
 class ServiceLocator {
@@ -47,6 +48,9 @@ Future<void> initDependencies() async {
       aiDataSource: serviceLocator.get<AIDataSource>(),
     ),
   );
+
+  // Services
+  serviceLocator.registerSingleton<HistoryService>(HistoryService());
 
   // Use cases
   serviceLocator.registerSingleton(

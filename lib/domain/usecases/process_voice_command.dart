@@ -6,7 +6,8 @@ class ProcessVoiceCommand {
 
   ProcessVoiceCommand(this.repository);
 
-  Future<VoiceCommand> execute(String text) async {
-    return await repository.processTextToCommand(text);
+  Future<VoiceCommand> execute(String text, {String? commandMode}) async {
+    return await repository.processTextToCommand(
+        text, commandMode: commandMode);
   }
 }

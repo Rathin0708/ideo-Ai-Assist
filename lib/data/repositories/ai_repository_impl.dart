@@ -8,7 +8,9 @@ class AIRepositoryImpl implements AIRepository {
   AIRepositoryImpl({required this.dataSource});
 
   @override
-  Future<VoiceCommand> processTextToCommand(String text) async {
-    return await dataSource.processTextToCommand(text);
+  Future<VoiceCommand> processTextToCommand(String text,
+      {String? commandMode}) async {
+    return await dataSource.processTextToCommand(
+        text, commandMode: commandMode);
   }
 }
